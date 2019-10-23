@@ -1,0 +1,25 @@
+version: '3'
+services:
+  web: #サービス名
+    build: .
+    command: bundle exec rails s -p 4000 -b '0.0.0.0'
+    volumes:
+      - .:/app
+    ports:
+      - 4000:4000
+    depends_on:
+      - db
+    tty: true
+    stdin_open: true
+
+  db: #サービス名
+    image: mysql:5.7
+    volumes:
+      - db-volume:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password #ここを編集
+      MYSQL_DATABASE: root #ここを編集
+    ports:
+      - "4306:4306"
+volumes:
+  db-volume:
