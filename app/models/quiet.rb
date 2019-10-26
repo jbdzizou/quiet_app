@@ -1,0 +1,2 @@
+class Quiet < ApplicationRecord
+end
