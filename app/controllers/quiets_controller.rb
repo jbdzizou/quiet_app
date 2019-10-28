@@ -6,6 +6,10 @@ class QuietsController < ApplicationController
   end
 
   def new
+    @quiet = Quiets.new
+  end
+
+  def create
   end
 
   def edit
