@@ -38,7 +38,10 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'slim-rails'
 gem 'html2slim'
-gem 'bootstrap-sass'
+
+gem 'bootstrap'
+gem 'jquery-rails'
+
 gem 'autoprefixer-rails'
 gem 'simple_form'
 gem 'devise'
