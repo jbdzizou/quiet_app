@@ -12,6 +12,7 @@
  *
  */
 @import "bootstrap";
+@import "font-awesome";
 
 /* carousel styles */
 
@@ -23,3 +24,17 @@
     }
 }
 */
+.carousel-item {
+    position: relative;
+    p {
+        position: absolute;
+        color:white;
+        font-weight: bold;
+        font-size: 50px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        margin:0;
+        padding:0;
+    }
+}
