@@ -39,3 +39,19 @@
         padding:0;
     }
 }
+
+/*.no-gutters{
+    margin: 20px 0px 20px 0px;
+}*/
+/*
+.jumbotron {
+	padding-top: 0px;
+    background: url(coffe-book.jpg);
+	background-size: cover;
+	background-position: 50% 50%;
+}*/
+.jumbotron-extend {
+    position: relative;
+    height: 40vh;
+    min-height: 200px;
+}
