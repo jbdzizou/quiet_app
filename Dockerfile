@@ -7,7 +7,10 @@ RUN mkdir /app
 WORKDIR /app
 COPY Gemfile /app/Gemfile
 COPY Gemfile.lock /app/Gemfile.lock
+RUN gem install bundler --no-document
+RUN bundle config build.nokogiri --use-system-libraries
 RUN bundle install
+RUN apt-get clean
 COPY . /app
 
 # コンテナが起動するたびに実行されるスクリプトを実行
