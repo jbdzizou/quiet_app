@@ -1,8 +1,9 @@
 class QuietsController < ApplicationController
   def index
+    @quiets = Quiet.all 
   end
 
-  def show
+  def show 
   end
 
   def new
