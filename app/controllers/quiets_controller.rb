@@ -7,7 +7,7 @@ class QuietsController < ApplicationController
   end
 
   def new
-    @quiet = Quiets.new
+    @quiet = current_user.quiet.build
   end
 
   def create

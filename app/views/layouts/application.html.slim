@@ -17,15 +17,20 @@ html
         .container
             nav.navbar.navbar-expand-md.navbar-dark.bg-dark
                 .navbar-brand
+                = link_to root_path
                     i.fas.fa-book.fa-3x style="color:blue;"
                 - if current_user
-                    ul.navbar-nav.mr-auto
-                        li= link_to "口コミ", root_path
-                        li= link_to "ログアウト", root_path
+                    ul.navbar-nav.nav.pl-md-3
+                        li= link_to "投稿", new_quiet_path
+                    ul.navbar-nav.nav.pl-md-3
+                        li= link_to "設定", edit_user_registration_path
+                    ul.navbar-nav.ml-auto
+                        li= link_to "ログアウト", destroy_user_session_path, method: :delete
+        
                 - else
-                    ul.navbar-nav.mr-auto
-                    ul.navbar-nav.nav
-                        li= link_to "ログイン", root_path
+                    ul.navbar-nav.nav.pl-md-3
+                    ul.navbar-nav.ml-auto
+                        li= link_to "ログイン", new_user_registration_path
 
 
 
