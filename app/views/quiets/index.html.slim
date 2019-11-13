@@ -25,13 +25,13 @@
             <svg class="bd-placeholder-img" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image"><title>Placeholder</title><rect fill="#868e96" width="100%" height="100%"/><text fill="#dee2e6" dy=".3em" x="50%" y="50%">Image</text></svg>
             </div>
             <div class="col-md-8">
-            
             <div class="card-body text-secondary" >
             - @quiets.each do |quiet|
                 div.quiet
-                    h5 = link_to quiet.name, quiet
+                    p = "username仮置き"
                     p = quiet.description
-                    p = time_ago_in_words(quiet.updated_at)
+                    p style="text-align: right" = l quiet.updated_at
+                    h3 = link_to quiet.name, quiet
             </div>
             </div>
         </div>
