@@ -26,15 +26,11 @@ html
                         li= link_to "設定", edit_user_registration_path
                     ul.navbar-nav.ml-auto
                         li= link_to "ログアウト", destroy_user_session_path, method: :delete
-        
+
                 - else
                     ul.navbar-nav.nav.pl-md-3
                     ul.navbar-nav.ml-auto
                         li= link_to "ログイン", new_user_registration_path
-
-
-
-
 
             = yield
 
