@@ -4,37 +4,30 @@
         <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
     </div>
 </div>
-<main class="p-3">
-    <!-- 4個分のタブ -->
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-            <a class="nav-link active" href="#tab1" data-toggle="tab">店舗</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#tab2" data-toggle="tab">コメント</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#tab3" data-toggle="tab">アクセス</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#tab4" data-toggle="tab">編集</a>
-        </li>
-    </ul>
 
-    <!-- 写真部分 -->
-    <div class="tab-content">
-        <div id="tab1" class="tab-pane active">
-            <img src="https://pictkan.com/uploads/cache/875480688/dinner-table-444434_1920-225x150-MM-100.jpg" class="img-fluid" alt="Responsive image">
-            p 写真
-        </div>
-        <div id="tab2" class="tab-pane">
-            p コメント欄
-        </div>
-        <div id="tab3" class="tab-pane">
-            p 店舗へのアクセス情報
-        </div>
-        <div id="tab4" class="tab-pane">
-            p 編集内容
-        </div>
+<!-- タブ部分 -->
+<ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+    <li class="nav-item">
+    <a class="nav-link active" id="店舗-tab" data-toggle="tab" href="#店舗" role="tab" aria-controls="店舗" aria-selected="true">店舗</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" id="口コミ-tab" data-toggle="tab" href="#口コミ" role="tab" aria-controls="口コミ" aria-selected="false">口コミ</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" id="アクセス-tab" data-toggle="tab" href="#アクセス" role="tab" aria-controls="アクセス" aria-selected="false">アクセス</a>
+    </li>
+</ul>
+
+<!-- パネル部分 -->
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="店舗" role="tabpanel" aria-labelledby="店舗-tab">
+        <img src="https://pictkan.com/uploads/cache/875480688/dinner-table-444434_1920-225x150-MM-100.jpg" class="img-fluid" alt="Responsive image">
     </div>
-</main>
+    <div class="tab-pane fade" id="口コミ" role="tabpanel" aria-labelledby="口コミ-tab">
+        p 口コミ情報
+    </div>
+    <div class="tab-pane fade" id="アクセス" role="tabpanel" aria-labelledby="アクセス-tab">
+        p アクセス情報
+    </div>
+</div>
+

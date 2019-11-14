@@ -26,12 +26,12 @@
             </div>
             <div class="col-md-8">
             <div class="card-body text-secondary" >
-            - @quiets.each do |quiet|
-                div.quiet
-                    p = "username仮置き"
-                    p = quiet.description
-                    p style="text-align: right" = l quiet.updated_at
-                    h3 = link_to quiet.name, quiet
+                - @quiets.each do |quiet|
+                    div.quiet
+                        h5 = "username仮置き"
+                        p = quiet.description.truncate(60)
+                        p style="text-align: right" = l quiet.updated_at
+                        h5 = link_to quiet.name.truncate(20), quiet
             </div>
             </div>
         </div>
