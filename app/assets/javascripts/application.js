@@ -17,7 +17,7 @@
 //= require popper
 //= require bootstrap-sprockets
 
-$(document).ready(function() {
+/*$(document).ready(function() {
     // #(ハッシュ)指定されたタブを表示する
     
         var hashTabName = document.location.hash;
@@ -25,3 +25,30 @@ $(document).ready(function() {
             $('.nav-tabs a[href=' + hashTabName + ']').tab('show');
         }
 });
+*/
+/*
+<script type="text/javascript">
+    $(function() {
+        var hash = document.location.hash;
+        if (hash) {
+        $('.nav-tabs a[href='+hash+']').tab('show');
+        }
+
+        $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+            window.location.hash = e.target.hash;
+        });
+    });
+</script>
+*/
+
+// #(ハッシュ)指定されたタブを表示する
+var hash = document.location.hash;
+
+if (hash) {
+		$('.nav-tabs a[href="' + hash + '"]').tab('show');
+	}
+	$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        e.target // newly activated tab
+        e.relatedTarget // previous active tab
+	});
+;
