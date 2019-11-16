@@ -31,12 +31,21 @@
         position: absolute;
         color:white;
         font-weight: bold;
-        font-size: 50px;
-        top: 50%;
+        font-size: 40px;
+        top: 45%;
         left: 50%;
         transform: translate(-50%,-50%);
         margin:0;
         padding:0;
+    }
+    .rounded-pill {
+        position: absolute;
+        font-size: 20px;
+        top: 130%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        margin:0;
+        padding:50;
     }
 }
 

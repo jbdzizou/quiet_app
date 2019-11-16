@@ -1,11 +1,11 @@
 class QuietsController < ApplicationController
   /before_action :authenticate_user!, only: [:show, :new]/
-  
+
   def index
     @quiets = Quiet.all.order("created_at DESC")
   end
 
-  def show 
+  def show
   end
 
   def new
