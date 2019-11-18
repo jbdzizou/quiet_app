@@ -1,27 +1,33 @@
+div.quiet
+    h5 = "username仮置き"
+    p = quiet.description.truncate(60)
+    p style="text-align: right" = l quiet.updated_at
+    h5 = link_to quiet.name.truncate(20), quiet
 
 
-<div class="row">
-    <div class="col-sm-6">
-    <div class="card border-secondary my-xl-3" style="max-width: 540px;">
-        <div class="row no-gutters">
-            <div class="col-md-4">
-            <svg class="bd-placeholder-img" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image"><title>Placeholder</title><rect fill="#868e96" width="100%" height="100%"/><text fill="#dee2e6" dy=".3em" x="50%" y="50%">Image</text></svg>
-            </div>
-            <div class="col-md-8">
-            <div class="card-body text-secondary" >
-                - @quiets.each do |quiet|
+/<div class="row">
+    <div class="card-deck">
+        <div class="col-sm-6">
+        <div class="card border-secondary my-xl-3" style="max-width: 540px;">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                <svg class="bd-placeholder-img" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image"><title>Placeholder</title><rect fill="#868e96" width="100%" height="100%"/><text fill="#dee2e6" dy=".3em" x="50%" y="50%">Image</text></svg>
+                </div>
+                <div class="col-md-8">
+                <div class="card-body text-secondary" >
                     div.quiet
                         h5 = "username仮置き"
                         p = quiet.description.truncate(60)
                         p style="text-align: right" = l quiet.updated_at
                         h5 = link_to quiet.name.truncate(20), quiet
-
-            </div>
+                </div>
+                </div>
             </div>
         </div>
+        </div>
     </div>
-    </div>
-    <div class="col-sm-6">
+/</div>
+/    <div class="col-sm-6">
     <div class="card card border-secondary my-xl-3" style="max-width: 540px;">
         <div class="row no-gutters">
             <div class="col-md-4">
@@ -40,4 +46,4 @@
         </div>
     </div>
     </div>
-</div>
+/</div>

@@ -1,9 +1,13 @@
-<div class="jumbotron jumbotron-extend">
-    <div class="container-fluid">
-        <h1 class="display-4" style=black>Fluid jumbotron</h1>
-        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-    </div>
-</div>
+div.jumbotron.jumbotron-extend
+    div.container-fluid
+        h2.display4 style="black" = @quiet.name 
+        p.lead= @quiet.description 
+        span.badge.badge-pill.badge-warning  お薦め度
+        h2.i.fas.fa-star style="color:red;" 
+        h2.i.fas.fa-star style="color:red;" 
+        h2.i.fas.fa-star style="color:red;" 
+        P { text-indent: 1em; }
+            h3.i.fas.fa-train 秋葉原駅東口から徒歩5分
 
 <!-- タブ部分 -->
 <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
@@ -24,8 +28,24 @@
         <img src="https://pictkan.com/uploads/cache/875480688/dinner-table-444434_1920-225x150-MM-100.jpg" class="img-fluid" alt="Responsive image">
     </div>
     <div class="tab-pane fade" id="口コミ" role="tabpanel" aria-labelledby="口コミ-tab">
-        p 口コミ情報
+        <div class="card mb-3 style=max-width: 540px;">
+            <div class="row no-gutters">
+                <div class="col-md-8">
+                    <div class="card-body">
+                    <--!コメントへコントローラー作成したら取り替える-->
+                        h5 = "username仮置き"
+                        p = @quiet.description
+                        p style="text-align: right" = l @quiet.updated_at
+                        p = @quiet.name
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <svg class="bd-placeholder-img" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image</text></svg>
+                </div>
+            </div>
+        </div>
     </div>
+
     <div class="tab-pane fade" id="アクセス" role="tabpanel" aria-labelledby="アクセス-tab">
         p アクセス情報
     </div>

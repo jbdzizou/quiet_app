@@ -6,6 +6,7 @@ class QuietsController < ApplicationController
   end
 
   def show
+    @quiet = Quiet.find(params[:id])
   end
 
   def new
@@ -23,10 +24,17 @@ class QuietsController < ApplicationController
 
   def edit
   end
-end
 
-private
+  def update
+  end
 
-def quiet_params
-  params.require(:quiet).permit(:name, :description)
+  def destroy
+  end
+
+  private
+
+  def quiet_params
+    params.require(:quiet).permit(:name, :description)
+  end
+
 end
