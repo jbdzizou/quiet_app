@@ -1,2 +1,9 @@
-h1 Quiets#edit
-p Find me in app/views/quiets/edit.html.slim
+div.col-md-12.col-md-offset-2.card-space
+    <div class="card">
+        <div class="card-header text-center">
+            <h2 >編集</h2>
+
+= render 'form'
+br
+= link_to "店舗ページへ戻る", quiet_path
+
