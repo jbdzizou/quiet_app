@@ -10,11 +10,11 @@ class QuietsController < ApplicationController
   end
 
   def new
-    @quiet = Quiet.new
+    @quiet = current_user.quiets.build
   end
 
   def create
-    @quiet = Quiet.new(quiet_params)
+    @quiet = current_user.quiets.build(quiet_params)
     if @quiet.save
       redirect_to root_path
     else
