@@ -43,9 +43,8 @@ br
                                         p = quiet.id
                                         p = quiet.description.truncate(50)
                                         p style="text-align: right" = l quiet.updated_at
-                                        /= link_to quiet_path
-                                            i.fas.fa-pencil-alt style="color:red;"
                                     </li>
+                                    
                                     <li class="list-group-item border border-0">
                                         h5 = link_to quiet.name,quiet_path(quiet),{:style=>'color:black;'}
                                     </li>
