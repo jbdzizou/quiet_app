@@ -1,0 +1,8 @@
+h4 = "お店にコメントする"
+= simple_form_for ([@quiet, @quiet.comments.build]) do |f|
+    = f.input :content, label: "コメント"
+    = f.button :submit, :class => 'btn btn-success'
+
+links.btn-group
+    = link_to "戻る", quiet_path, class: "btn btn-primary"
+

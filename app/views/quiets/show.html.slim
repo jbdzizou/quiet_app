@@ -10,6 +10,7 @@ div.jumbotron.jumbotron-extend
             h3.i.fas.fa-train 秋葉原駅東口から徒歩5分
             .btn-group
             -if user_signed_in?
+                div.float-right= link_to 'コメント', edit_quiet_comment_path(@quiet), class:'btn btn-warning mr-3'
                 -if @quiet.user_id == current_user.id
                     div.float-right= link_to '削除', quiet_path(@quiet), method: :delete,
                     data: { confirm: "削除します。本当によろしいですか？" }, class:'btn btn-danger mr-3'
@@ -37,11 +38,7 @@ div.jumbotron.jumbotron-extend
             <div class="row no-gutters">
                 <div class="col-md-8">
                     <div class="card-body">
-                    <--!コメントへコントローラー作成したら取り替える-->
-                        h5 = "username仮置き"
-                        p = @quiet.description
-                        p style="text-align: right" = l @quiet.updated_at
-                        p = @quiet.name
+                        p = render @quiet.comments
                     </div>
                 </div>
                 <div class="col-md-4">
