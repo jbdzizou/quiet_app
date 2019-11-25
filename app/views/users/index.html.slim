@@ -13,4 +13,5 @@ table.table.table-hover.table-striped
             td= user.id
             td= user.name
             td= user.email
-            td= link_to '削除', users_path, method: :delete,data: { confirm: "削除します。本当によろしいですか？" }, class:'btn btn-danger mr-3'
+            -if current_user.admin? && !(current_user == user)
+                td= link_to '削除', users_path, method: :delete,data: { confirm: "削除します。本当によろしいですか？" }, class:'btn btn-danger mr-3'
