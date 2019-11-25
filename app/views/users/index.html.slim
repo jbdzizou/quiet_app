@@ -1,0 +1,16 @@
+.mb-3
+table.table.table-hover.table-striped
+    thead.thead-default
+        tr
+            th= User.human_attribute_name(:userID)
+            th= User.human_attribute_name(:username)
+            th= User.human_attribute_name(:mailaddress)
+            th
+
+    tbody
+    -@users.each do |user|
+        tr
+            td= user.id
+            td= user.name
+            td= user.email
+            td= link_to '削除', users_path, method: :delete,data: { confirm: "削除します。本当によろしいですか？" }, class:'btn btn-danger mr-3'

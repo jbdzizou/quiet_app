@@ -23,11 +23,13 @@ html
                 = link_to root_path
                     i.fas.fa-book.fa-3x style="color:blue;"
                 - if user_signed_in?
-                    ul.navbar-nav.nav.pl-md-3
-                        li= link_to "新規店舗", new_quiet_path
-                    ul.navbar-nav.nav.pl-md-3
-                        li= link_to "設定", edit_user_registration_path
-                    ul.navbar-nav.ml-auto
+                    ul.navbar-nav.nav.mr-auto.pl-md-3
+                        li= link_to "新規店舗投稿", new_quiet_path
+                    ul.navbar-nav.pl-md-3
+                        li= link_to "ユーザ一覧", users_path
+                    ul.navbar-nav.pl-md-3
+                        li= link_to "ユーザ設定", edit_user_registration_path
+                    ul.navbar-nav.pl-md-3
                         li= link_to "ログアウト", destroy_user_session_path, method: :delete
 
                 - else
