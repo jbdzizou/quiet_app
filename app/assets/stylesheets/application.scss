@@ -70,3 +70,17 @@
 .list-body {
     font-size: 15px;
 }
+
+.card-title {
+    position: relative;
+    .card-msg {
+        font-size: 30px;
+        font-weight: bold;
+    }
+}
+
+.main-title {
+    font-size: 30px;
+    font-weight: bold;
+    font-style: italic;
+}

@@ -11,10 +11,15 @@ div.jumbotron.jumbotron-extend
             .btn-group
             -if user_signed_in?
                 div.float-right= link_to 'コメント', edit_quiet_comment_path(@quiet), class:'btn btn-warning mr-3'
-                -if @quiet.user_id == current_user.id
+                -if current_user.admin?
                     div.float-right= link_to '削除', quiet_path(@quiet), method: :delete,
                     data: { confirm: "削除します。本当によろしいですか？" }, class:'btn btn-danger mr-3'
                     div.float-right= link_to '編集', edit_quiet_path(@quiet), class:'btn btn-primary mr-3'
+                -if @quiet.user_id == current_user.id
+                    div.float-right= link_to '編集', edit_quiet_path(@quiet), class:'btn btn-primary mr-3'
+
+
+
 <!-- タブ部分 -->
 <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
     <li class="nav-item">

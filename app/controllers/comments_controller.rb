@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
         if @comment.save
             redirect_to quiet_path(@quiet)
         else
-            render 'new'
+            render 'edit'
         end
     end
 
