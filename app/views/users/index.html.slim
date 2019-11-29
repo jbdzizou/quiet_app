@@ -2,6 +2,7 @@
 table.table.table-hover.table-striped
     thead.thead-default
         tr
+            th= User.human_attribute_name(:userimage)
             th= User.human_attribute_name(:userID)
             th= User.human_attribute_name(:username)
             th= User.human_attribute_name(:mailaddress)
@@ -10,8 +11,11 @@ table.table.table-hover.table-striped
     tbody
     -@users.each do |user|
         tr
+            -if user.image?
+                td= image_tag user.image.thumb.url if user.image?
             td= user.id
             td= user.name
             td= user.email
             -if current_user.admin? && !(current_user == user)
                 td= link_to '削除', users_path, method: :delete,data: { confirm: "削除します。本当によろしいですか？" }, class:'btn btn-danger mr-3'
+    
