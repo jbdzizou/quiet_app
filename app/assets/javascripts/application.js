@@ -16,9 +16,8 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
-//= require_tree .
 //= require turbolinks
-
+//= require_tree .
 
 /*$(document).ready(function() {
     // #(ハッシュ)指定されたタブを表示する
