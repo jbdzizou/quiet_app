@@ -1,21 +1,11 @@
-.mb-3
-table.table.table-hover.table-striped
-    thead.thead-default
-        tr
-            th= User.human_attribute_name(:userimage)
-            th= User.human_attribute_name(:userID)
-            th= User.human_attribute_name(:username)
-            th= User.human_attribute_name(:mailaddress)
-            th
-
-    tbody
-    -@users.each do |user|
-        tr
-            -if user.image?
-                td= image_tag user.image.thumb.url if user.image?
-            td= user.id
-            td= user.name
-            td= user.email
-            -if current_user.admin? && !(current_user == user)
-                td= link_to '削除', users_path, method: :delete,data: { confirm: "削除します。本当によろしいですか？" }, class:'btn btn-danger mr-3'
-    
+.container
+    .row
+        ul class="list-unstyled"
+            div class="col-md-24 border"
+                -@users.each do |user|
+                    div class="media"
+                        -if user.image?
+                            li= image_tag user.image.thumb.url if user.image?
+                            div class="media-body"
+                                li= user.name
+                                li= user.email

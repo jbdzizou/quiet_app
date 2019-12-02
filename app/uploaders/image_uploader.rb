@@ -30,12 +30,17 @@ include CarrierWave::RMagick
 #JPGで保存
   process :convert => 'jpg'
 
+#defaultの画像
+  def default_url(*args)
+    "/images/" + [version_name, "default.png"].compact.join('_')
+  end
+
 #サムネイルの為に画像をリサイズ
 version :thumb do 
-  process resize_to_fit: [200, 200] 
+  process resize_to_fit: [100, 100] 
 end 
 version :thumb50 do 
-  process resize_to_fit: [100, 100] 
+  process resize_to_fit: [50, 50] 
 end 
 
 # jpg,jpeg,gif,pngしか受け付けない
