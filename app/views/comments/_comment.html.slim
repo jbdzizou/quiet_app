@@ -1,4 +1,7 @@
 .comment
-    p.comment-posted-by=comment.user.name
+    div class="media"
+        img = image_tag comment.user.image.thumb50.url
+        div class="media-body"
+            p class="pl-md-3" = comment.user.name
     p.comment-content=comment.content
     p style="text-align: right" = l @quiet.updated_at
