@@ -43,7 +43,11 @@ div.jumbotron.jumbotron-extend
             <div class="row no-gutters">
                 <div class="col-md-12">
                     <div class="card-body">
-                        p = render @quiet.comments
+                        div class="media"
+                            img = image_tag @quiet.user.image.thumb50.url
+                            div class="media-body"
+                                p class="pl-md-3" = @quiet.user.name
+                                p = render @quiet.comments
                     </div>
                 </div>
             </div>

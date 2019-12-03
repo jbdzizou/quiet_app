@@ -60,7 +60,10 @@
                             <div class="card-body" >
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item list-body">
-                                        p = quiet.user.name
+                                        div class="media"
+                                                img= image_tag quiet.user.image.thumb50.url if quiet.user.image?
+                                                div class="media-body pl-md-3"
+                                                    p = quiet.user.name
                                         p = quiet.description.truncate(50)
                                         p style="text-align: right" = l quiet.updated_at
                                     </li>

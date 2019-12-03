@@ -1,11 +1,12 @@
-.container
+.container-fluid
     .row
-        ul class="list-unstyled"
-            div class="col-md-24 border"
-                -@users.each do |user|
-                    div class="media"
-                        -if user.image?
-                            li= image_tag user.image.thumb.url if user.image?
-                            div class="media-body"
-                                li= user.name
-                                li= user.email
+        -@users.each do |user|
+            div class="col-md-4 col-sm-6 text-center"
+                ul class="list-unstyled"
+                    li class="media m-2"
+                        div class="media"
+                            -if user.image?
+                                img= image_tag user.image.thumb.url if user.image?
+                                div class="media-body pl-md-3"
+                                    p = user.name
+                                    p = user.email
