@@ -5,4 +5,6 @@ class Quiet < ApplicationRecord
     validates :name, presence: true, uniqueness: true, length: { maximum:80}
     validates :description, presence: true, length: { maximum:400}
 
+    mount_uploader :store, StoreUploader
+
 end
