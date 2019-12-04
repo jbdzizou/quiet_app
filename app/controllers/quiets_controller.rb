@@ -41,7 +41,7 @@ class QuietsController < ApplicationController
   private
 
   def quiet_params
-    params.require(:quiet).permit(:name, :description)
+    params.require(:quiet).permit(:name, :description, :store)
   end
 
   def find_quiet

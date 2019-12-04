@@ -37,7 +37,7 @@ version :store_thumb do
   process resize_to_fit: [420, 280] 
 end 
 version :store_thumb50 do 
-  process resize_to_fit: [50, 50] 
+  process resize_to_fit: [100, 100] 
 end 
 
 # jpg,jpeg,gif,pngしか受け付けない
