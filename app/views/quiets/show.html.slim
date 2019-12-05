@@ -52,7 +52,9 @@ div.jumbotron.jumbotron-extend
     </div>
 
     <div class="tab-pane fade" id="情報" role="tabpanel" aria-labelledby="情報-tab">
-        p 情報
+        -if user_signed_in?
+            div.float-left= link_to '新規情報追加', new_quiet_info_path(@quiet), class:'btn btn-info mr-3'
+
     </div>
 </div>
 

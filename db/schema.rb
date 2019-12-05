@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_05_042754) do
+ActiveRecord::Schema.define(version: 2019_12_05_074338) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2019_12_05_042754) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "quiet_id"
   end
 
   create_table "quiets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
