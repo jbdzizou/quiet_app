@@ -10,6 +10,7 @@ div.jumbotron.jumbotron-extend
             h3.i.fas.fa-train 秋葉原駅東口から徒歩5分
             .btn-group
             -if user_signed_in?
+                div.float-right= link_to '情報', edit_quiet_info_path(@quiet), class:'btn btn-info mr-3'
                 div.float-right= link_to '口コミ', edit_quiet_comment_path(@quiet), class:'btn btn-warning mr-3'
                 div.float-right= link_to '店舗', edit_quiet_path(@quiet), class:'btn btn-primary mr-3'
                 -if current_user.admin?
@@ -25,7 +26,7 @@ div.jumbotron.jumbotron-extend
     <a class="nav-link" id="口コミ-tab" data-toggle="tab" href="#口コミ" role="tab" aria-controls="口コミ" aria-selected="false">口コミ</a>
     </li>
     <li class="nav-item">
-    <a class="nav-link" id="アクセス-tab" data-toggle="tab" href="#アクセス" role="tab" aria-controls="アクセス" aria-selected="false">アクセス</a>
+    <a class="nav-link" id="情報-tab" data-toggle="tab" href="#情報" role="tab" aria-controls="情報" aria-selected="false">情報</a>
     </li>
 </ul>
 
@@ -50,8 +51,8 @@ div.jumbotron.jumbotron-extend
         </div>
     </div>
 
-    <div class="tab-pane fade" id="アクセス" role="tabpanel" aria-labelledby="アクセス-tab">
-        p アクセス情報
+    <div class="tab-pane fade" id="情報" role="tabpanel" aria-labelledby="情報-tab">
+        p 情報
     </div>
 </div>
 

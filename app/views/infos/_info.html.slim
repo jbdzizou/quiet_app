@@ -1,7 +1,7 @@
-= simple_form_for @quiet do |f|
+/= simple_form_for @quiet do |f|
     div class="form-group"
         = f.input :name, label: "店名"
-        = f.input :description, input_html: { rows: 5 }, label: "店舗紹介"
+        = f.input :description, label: "店舗紹介"
     div class="form-group"
         h5 = f.label "画像をアップロード"
         p = f.label "現在の設定画像"
