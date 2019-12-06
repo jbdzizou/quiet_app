@@ -1,0 +1,12 @@
+.col-md-12.col-md-offset-2.card-space
+.card
+    .card-header.text-center
+        h2 新たにコメントする
+= simple_form_for @comment, url: new_quiet_comment_path do |f|
+    .form-group
+        = f.input :content, input_html: { rows: 5 }, label: "コメント"
+        = f.button :submit, :class => 'btn btn-success'
+
+.btn-group
+    = link_to "戻る", quiet_path(@quiet), class: "btn btn-primary"
+

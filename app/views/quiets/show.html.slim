@@ -10,8 +10,6 @@ div.jumbotron.jumbotron-extend
             h3.i.fas.fa-train 秋葉原駅東口から徒歩5分
             .btn-group
             -if user_signed_in?
-                div.float-right= link_to '情報', edit_quiet_info_path(@quiet), class:'btn btn-info mr-3'
-                div.float-right= link_to '口コミ', edit_quiet_comment_path(@quiet), class:'btn btn-warning mr-3'
                 div.float-right= link_to 'お店更新', edit_quiet_path(@quiet), class:'btn btn-primary mr-3'
                 -if current_user.admin?
                     div.float-right= link_to '削除', quiet_path(@quiet), method: :delete,
@@ -41,7 +39,10 @@ div.jumbotron.jumbotron-extend
     </div>
     <!-- 口コミ部分 -->
     <div class="tab-pane fade" id="口コミ" role="tabpanel" aria-labelledby="口コミ-tab">
+
         <div class="card mb-3 style=max-width: 540px;">
+        -if user_signed_in?
+            div.float-right= link_to '口コミを書く', new_quiet_comment_path(@quiet), class:'btn btn-warning mr-3'
             <div class="row no-gutters">
                 <div class="col-md-12">
                     <div class="card-body">
@@ -53,24 +54,6 @@ div.jumbotron.jumbotron-extend
     </div>
     <!-- 情報部分 -->
     <div class="tab-pane fade" id="情報" role="tabpanel" aria-labelledby="情報-tab">
-        /-if user_signed_in?
-            div.float-left= link_to '新規情報追加', new_quiet_info_path(@quiet), class:'btn btn-info mr-3'
-        /.container
-            .card
-                .row
-                h4 = "#{@quiet.name}のその他情報"
-                .row
-                    ul.list-group.list-group-horizontal
-                        li.list-group-item.col-md-4
-                            h5 おすすめポイント
-                        li.list-group-item.col-md-8
-                            h5 = @quiet.recommend
-                .row
-                    ul.list-group.list-group-horizontal
-                        li.list-group-item.col-md-4
-                            h5 アクセス
-                        li.list-group-item.col-md-8
-                            h5 = @quiet.road
         .row
         h4 = "#{@quiet.name}のその他情報"
         .list-group
@@ -90,21 +73,6 @@ div.jumbotron.jumbotron-extend
                     .col-md-8
                         .card-body
                             h5 = @quiet.road
-
-
-
-
-            / .list-group-item
-            /     .card.mb-3
-            /         .row.no-gutters
-            /             .col-md-4.text-center.align-self-center
-            /                     h5 アクセス
-            /             .col-md-8
-            /                 .card-body
-            /                     h5 = @quiet.road
-
-
-
     </div>
 </div>
 
