@@ -12,7 +12,7 @@ div.jumbotron.jumbotron-extend
             -if user_signed_in?
                 div.float-right= link_to '情報', edit_quiet_info_path(@quiet), class:'btn btn-info mr-3'
                 div.float-right= link_to '口コミ', edit_quiet_comment_path(@quiet), class:'btn btn-warning mr-3'
-                div.float-right= link_to '店舗', edit_quiet_path(@quiet), class:'btn btn-primary mr-3'
+                div.float-right= link_to 'お店更新', edit_quiet_path(@quiet), class:'btn btn-primary mr-3'
                 -if current_user.admin?
                     div.float-right= link_to '削除', quiet_path(@quiet), method: :delete,
                     data: { confirm: "削除します。本当によろしいですか？" }, class:'btn btn-danger mr-3'
@@ -32,13 +32,14 @@ div.jumbotron.jumbotron-extend
 
 <!-- パネル部分 -->
 <div class="tab-content" id="myTabContent">
+    <!-- 店舗部分 -->
     <div class="tab-pane fade show active" id="店舗" role="tabpanel" aria-labelledby="店舗-tab">
-        /<img src="https://pictkan.com/uploads/cache/875480688/dinner-table-444434_1920-225x150-MM-100.jpg" class="img-fluid" alt="Responsive image">
         -if @quiet.store?
             img = image_tag @quiet.store.store_thumb.url
         -else
             img = image_tag @quiet.store.url
     </div>
+    <!-- 口コミ部分 -->
     <div class="tab-pane fade" id="口コミ" role="tabpanel" aria-labelledby="口コミ-tab">
         <div class="card mb-3 style=max-width: 540px;">
             <div class="row no-gutters">
@@ -50,10 +51,59 @@ div.jumbotron.jumbotron-extend
             </div>
         </div>
     </div>
-
+    <!-- 情報部分 -->
     <div class="tab-pane fade" id="情報" role="tabpanel" aria-labelledby="情報-tab">
-        -if user_signed_in?
+        /-if user_signed_in?
             div.float-left= link_to '新規情報追加', new_quiet_info_path(@quiet), class:'btn btn-info mr-3'
+        /.container
+            .card
+                .row
+                h4 = "#{@quiet.name}のその他情報"
+                .row
+                    ul.list-group.list-group-horizontal
+                        li.list-group-item.col-md-4
+                            h5 おすすめポイント
+                        li.list-group-item.col-md-8
+                            h5 = @quiet.recommend
+                .row
+                    ul.list-group.list-group-horizontal
+                        li.list-group-item.col-md-4
+                            h5 アクセス
+                        li.list-group-item.col-md-8
+                            h5 = @quiet.road
+        .row
+        h4 = "#{@quiet.name}のその他情報"
+        .list-group
+            .list-group-item
+                .row.no-gutters
+                    .col-md-4.text-center.align-self-center
+                            i class="fab fa-angellist" style="color:blue;"
+                            h5 おすすめポイント
+                    .col-md-8
+                        .card-body
+                            h5 = @quiet.recommend
+            .list-group-item
+                .row.no-gutters
+                    .col-md-4.text-center.align-self-center
+                        i class="fas fa-subway" style="color:red;"
+                        h5 アクセス
+                    .col-md-8
+                        .card-body
+                            h5 = @quiet.road
+
+
+
+
+            / .list-group-item
+            /     .card.mb-3
+            /         .row.no-gutters
+            /             .col-md-4.text-center.align-self-center
+            /                     h5 アクセス
+            /             .col-md-8
+            /                 .card-body
+            /                     h5 = @quiet.road
+
+
 
     </div>
 </div>
