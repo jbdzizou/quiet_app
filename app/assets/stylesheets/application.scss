@@ -49,16 +49,6 @@
     }
 }
 
-/*.no-gutters{
-    margin: 20px 0px 20px 0px;
-}*/
-/*
-.jumbotron {
-	padding-top: 0px;
-    background: url(coffe-book.jpg);
-	background-size: cover;
-	background-position: 50% 50%;
-}*/
 .jumbotron-extend {
     position: relative;
     height: 40vh;
@@ -90,3 +80,23 @@
     font-size: 20px;
     font-family: cursive;
 }
+
+.img-style {
+    max-width: 540px;
+    max-height: 300px;
+}
+
+.profile-font {
+    font-family: cursive;
+}
+.description-font {
+    font-family: cursive;
+}
+.store-font {
+    font-family: cursive;
+}
+
+// .picure-size {
+//     margin-top: 0;
+//     background: orange;
+// }

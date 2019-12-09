@@ -21,8 +21,8 @@ include CarrierWave::RMagick
     1..5.megabytes
   end
 
-# 画像の上限を640x480にする
-  process :resize_to_limit => [640, 480]
+# 画像の上限を300x200にする
+  process :resize_to_limit => [300, 200]
 
 #JPGで保存
   process :convert => 'jpg'
@@ -34,7 +34,7 @@ include CarrierWave::RMagick
 
 #サムネイルの為に画像をリサイズ
 version :store_thumb do 
-  process resize_to_fit: [420, 280] 
+  process resize_to_fit: [300, 200] 
 end 
 version :store_thumb50 do 
   process resize_to_fit: [100, 100] 

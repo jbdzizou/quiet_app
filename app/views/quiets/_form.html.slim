@@ -10,7 +10,7 @@
         p = f.label "現在の設定画像"
         /= form_with @quiet do |t|
         = image_tag @quiet.store.url
-            /= t.check_box :remove_store "画像を削除する"
+        /= f.check_box :remove_store "画像を削除する"
         p = f.file_field :store
     .form-group
         = f.button :submit, class: 'btn btn-primary'

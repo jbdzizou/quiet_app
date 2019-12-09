@@ -2,7 +2,7 @@
     div class="media"
         img = image_tag comment.user.image.thumb50.url
         div class="media-body"
-            p class="pl-md-3" = comment.user.name
+            p.pl-md-3.profile-font = comment.user.name
             -if comment.user_id == current_user.id
                 div.float-right= link_to '口コミ更新', edit_quiet_comment_path(comment.quiet, comment), class:'btn btn-info mr-3'
             -else current_user.admin?

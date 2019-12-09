@@ -24,8 +24,8 @@ include CarrierWave::RMagick
     1..5.megabytes
   end
 
-# 画像の上限を640x480にする
-  process :resize_to_limit => [640, 480]
+# 画像の上限を300x200にする
+  process :resize_to_limit => [300, 200]
 
 #JPGで保存
   process :convert => 'jpg'

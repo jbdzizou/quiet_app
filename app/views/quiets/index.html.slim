@@ -45,11 +45,11 @@
             <div class="col-md-6">
                 <div class="card mb-3 style=max-width: 540px;">
                     <div class="row no-gutters">
-                        <div class="col-md-4">
+                        <div class="col-md-4 picure-size">
                             -if quiet.store?
-                                img = image_tag quiet.store.store_thumb.url                  
+                                img.img-fluid = image_tag quiet.store.store_thumb.url                  
                             -else
-                                img= image_tag quiet.store.url
+                                img.img-fluid = image_tag quiet.store.url
                         </div>                
                         <div class="col-md-8">
                             <div class="card-body" >
@@ -58,8 +58,8 @@
                                         div class="media"
                                                 img= image_tag quiet.user.image.thumb50.url if quiet.user.image?
                                                 div class="media-body pl-md-3"
-                                                    p = quiet.user.name
-                                        p = quiet.description.truncate(50)
+                                                    p.profile-font = quiet.user.name
+                                        p.description-font = quiet.description.truncate(50)
                                         p style="text-align: right" = l quiet.updated_at
                                     </li>
                                     
@@ -74,7 +74,3 @@
             </div>
     </div>       
 </div>
-
-
-
-= link_to "Homeへ戻る", root_path
