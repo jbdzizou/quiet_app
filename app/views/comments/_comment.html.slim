@@ -3,8 +3,11 @@
         img = image_tag comment.user.image.thumb50.url
         div class="media-body"
             p class="pl-md-3" = comment.user.name
-            -if user_signed_in?
-                div.float-right= link_to '口コミ更新', edit_quiet_comment_path(@quiet), class:'btn btn-info mr-3'
+            -if comment.user_id == current_user.id
+                div.float-right= link_to '口コミ更新', edit_quiet_comment_path(comment.quiet, comment), class:'btn btn-info mr-3'
+            -else current_user.admin?
+                div.float-right= link_to '削除', quiet_path(@quiet), method: :delete,
+                data: { confirm: "削除します。本当によろしいですか？" }, class:'btn btn-danger mr-3'
 
     p.comment-content=comment.content
     p style="text-align: right" = l @quiet.updated_at

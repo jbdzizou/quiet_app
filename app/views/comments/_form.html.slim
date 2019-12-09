@@ -1,4 +1,4 @@
-= simple_form_for ([@quiet, @quiet.comments.build]) do |f|
+= simple_form_for ([@quiet, @comment]) do |f|
     = f.input :content, input_html: { rows: 5 }, label: "コメント"
     = f.button :submit, :class => 'btn btn-success'
 

@@ -7,7 +7,7 @@ div.jumbotron.jumbotron-extend
         h2.i.fas.fa-star style="color:red;" 
         h2.i.fas.fa-star style="color:red;" 
         P { text-indent: 1em; }
-            h3.i.fas.fa-train 秋葉原駅東口から徒歩5分
+            h3.i.fas.fa-train = @quiet.road
             .btn-group
             -if user_signed_in?
                 div.float-right= link_to 'お店更新', edit_quiet_path(@quiet), class:'btn btn-primary mr-3'
