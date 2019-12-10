@@ -1,13 +1,12 @@
-.comment
+.comment.alert.alert-success
     div class="media"
         img = image_tag comment.user.image.thumb50.url
         div class="media-body"
             p.pl-md-3.profile-font = comment.user.name
             -if comment.user_id == current_user.id
                 div.float-right= link_to '口コミ更新', edit_quiet_comment_path(comment.quiet, comment), class:'btn btn-info mr-3'
-            -else current_user.admin?
+            -elsif current_user.admin?
                 div.float-right= link_to '削除', quiet_path(@quiet), method: :delete,
                 data: { confirm: "削除します。本当によろしいですか？" }, class:'btn btn-danger mr-3'
-
     p.comment-content=comment.content
     p style="text-align: right" = l @quiet.updated_at

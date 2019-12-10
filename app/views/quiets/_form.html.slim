@@ -1,4 +1,5 @@
-= simple_form_for @quiet do |f|
+
+= simple_form_for @quiet, html: { multipart: true } do |f|
     .form-group
         = f.input :name, label: "店名"
         = f.input :description, input_html: { rows: 5 }, label: "店舗紹介"
@@ -8,9 +9,9 @@
     .form-group
         h5 = f.label "画像をアップロード"
         p = f.label "現在の設定画像"
-        /= form_with @quiet do |t|
         = image_tag @quiet.store.url
-        /= f.check_box :remove_store "画像を削除する"
         p = f.file_field :store
+        = f.label "現在の設定画像削除"
+        p = f.check_box :remove_store
     .form-group
         = f.button :submit, class: 'btn btn-primary'
