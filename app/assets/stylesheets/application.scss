@@ -100,3 +100,20 @@
 //     margin-top: 0;
 //     background: orange;
 // }
+
+.header_nav {
+    .link-noline {
+        text-decoration: none;
+    }
+}
+
+.flash {
+    color: $white;
+    text-align: center;
+    &__alert{
+        background-color: red;
+    }
+    &__notice {
+        background-color: $blue;
+    }
+}
