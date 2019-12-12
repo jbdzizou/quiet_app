@@ -29,12 +29,12 @@ include CarrierWave::RMagick
 
 #defaultの画像
   def default_url(*args)
-    "/images/" + [version_name, "default_store.jpg"].compact.join('_')
+    "/images/" + [version_name, "default_store2.jpg"].compact.join('_')
   end
 
 #サムネイルの為に画像をリサイズ
 version :store_thumb do 
-  process resize_to_fit: [200, 200] 
+  process resize_to_fit: [180, 180] 
 end 
 version :store_thumb50 do 
   process resize_to_fit: [100, 100] 
