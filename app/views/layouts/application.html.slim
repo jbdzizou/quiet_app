@@ -2,7 +2,7 @@ doctype html
 html
     head
         title
-            | 静ログTOP
+            | 静ログ
         = csrf_meta_tags
         = csp_meta_tag
 
@@ -25,7 +25,6 @@ html
                     i.fas.fa-mug-hot.fa-3x style="color:red;"
                     font size="6" color="red" face="HG行書体" 静ログ
 
-                    /i.fas.fa-book.fa-3x style="color:blue;"
                 - if user_signed_in?
                     ul.navbar-nav.nav.mr-auto.pl-md-3
                         li= link_to "新規店舗投稿", new_quiet_path, :style=>"text-decoration: none;"
@@ -36,9 +35,10 @@ html
                     ul.navbar-nav.pl-md-3
                         li.nav-item.dropdown
                             div class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                Dropdown = current_user.name
+                                i.far.fa-smile-beam.mrg-3 style="color:yellow;"
+                                font color="yellow" = current_user.name
                             div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"
-                                p class="dropdown-item"= link_to "ログアウト", destroy_user_session_path, method: :delete, :style=>"text-decoration: none;"
+                                p class="dropdown-item" = link_to "ログアウト", destroy_user_session_path, method: :delete, :style=>"text-decoration: none;" ,:style=>"color:blue;" 
                 - else
                     ul.navbar-nav.nav.mr-auto
                     ul.navbar-nav.pl-md-3
