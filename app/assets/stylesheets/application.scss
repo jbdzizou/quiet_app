@@ -186,3 +186,21 @@
     margin: 0;
     padding: 0;
 }
+
+.balloon2 {
+    width: 100%;
+    overflow: hidden;
+}
+
+.balloon2 .faceicon {
+    float: left;
+    margin-top: -20px;
+    margin-right: 10px;
+    width: 50px;
+}
+
+.balloon2 .faceicon img{
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
