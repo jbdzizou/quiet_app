@@ -1,53 +1,10 @@
-//修正中
-div class="balloon border border-primary"
-    figure class="balloon-image-left border border-danger"
+<!--吹き出しはじまり-->
+.balloon1
+    .faceicon
         img = image_tag comment.user.image.thumb50.url
-    figcaption class="balloon-image-description border"
-        profile-font = comment.user.name
-    div class="balloon-text-right lert alert-success ml-md-5 mr-md-3"
-        comment-content=comment.content
-        p style="text-align: right" = l @quiet.updated_at
-
-
-
-
-
-/ .comment
-/     div class="media circle-box"
-/         img = image_tag comment.user.image.thumb50.url
-
-/         div class="media-body alert alert-success ml-md-5 mr-md-5"
-/             p.comment-content=comment.content
-/             p style="text-align: right" = l @quiet.updated_at
-
-/     p.pl-md-1.profile-font.comment-profile  = comment.user.name
-
-
-
-/         div class="links btn-group"
-/             -if comment.user_id == current_user.id
-/                 div.float-right= link_to '口コミ更新', edit_quiet_comment_path(comment.quiet, comment), class:'btn btn-info mr-3'
-/             -elsif current_user.admin?
-/                 div.float-right= link_to '削除', quiet_path(@quiet), method: :delete,
-/                 data: { confirm: "削除します。本当によろしいですか？" }, class:'btn btn-danger mr-3'
-
-
-/ .comment
-/     div class="media circle-box"
-/         img = image_tag comment.user.image.thumb50.url
-/         div class="media-body"
-/             p.pl-md-3.profile-font = comment.user.name
-
-/     p.comment-content.alert.alert-success=comment.content
-/     p style="text-align: right" = l @quiet.updated_at
-
-
-/ .comment.border
-/ 	p style="display:inline-block;"
-/ 		img = image_tag comment.user.image.thumb50.url
-
-/ 	p style="border-radius:10px;width:900px;padding:1em;display:inline-block;vertical-align:top;" class="alert alert-success ml-md-5"
-/ 		ここにセリフが入ります。
-/ 		二行目はここ。
-	
-/         p.pl-md-2.profile-font = comment.user.name
+        .profile-font = comment.user.name
+    .chatting
+        .says
+            comment-content=comment.content
+            p style="text-align: right" = l @quiet.updated_at
+<!--吹き出し終わり-->

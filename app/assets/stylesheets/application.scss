@@ -140,33 +140,49 @@
         border-radius:50%;
     }
 }
-.balloon1-left {
-    position: relative;
+
+.balloon1 {
+    width: 100%;
+    margin: 1.5em 0;
+    overflow: hidden;
+}
+
+.balloon1 .faceicon {
+    float: left;
+    margin-right: -90px;
+    width: 70px;
+}
+
+.balloon1 .faceicon img{
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.balloon1 .chatting {
+    width: 100%;
+}
+
+.says {
     display: inline-block;
-    margin: 1.5em 0 1.5em 15px;
-    padding: 7px 10px;
-    min-width: 120px;
-    max-width: 100%;
-    color: #555;
-    font-size: 16px;
-    background: #e0edff;
+    position: relative; 
+    margin: 5px 0 0 105px;
+    padding: 17px 13px;
+    border-radius: 12px;
+    background: #d7ebfe;
 }
 
-.balloon1-left:before {
+.says:after {
     content: "";
+    display: inline-block;
     position: absolute;
-    top: 50%;
-    left: -30px;
-    margin-top: -15px;
-    border: 15px solid transparent;
-    border-right: 15px solid #e0edff;
+    top: 18px; 
+    left: -24px;
+    border: 12px solid transparent;
+    border-right: 12px solid #d7ebfe;
 }
 
-.balloon1-left p {
+.says p {
     margin: 0;
     padding: 0;
-}
-.comment-profile{
-    font-size: 5px;
-    margin-top: 0;
 }
