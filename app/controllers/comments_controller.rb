@@ -21,7 +21,7 @@ class CommentsController < ApplicationController
     end
 
     def update
-        if @comment.update(find_comment)
+        if @comment.update(comment_params)
             redirect_to quiet_path(@quiet)
         else
             render 'edit'
