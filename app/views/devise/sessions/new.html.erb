@@ -1,7 +1,7 @@
 <div class="col-md8 col-md-offset-2 card-space">
   <div class="card">
     <div class="card-header text-center">
-        <h2 >Log in</h2>
+        <h2 >ログイン</h2>
     </div>
     <div class="card-body">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -28,6 +28,20 @@
       <% end %>
 
       <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>
+
+<div class="col-md8 col-md-offset-2 card-space">
+  <div class="card">
+    <div class="card-header">
+      テストアカウント
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">メールアドレス</h5>
+      <p class="card-text">testuser@example.com</p>
+      <h5 class="card-title">パスワード</h5>
+      <p class="card-text">Testpassword</p>
     </div>
   </div>
 </div>

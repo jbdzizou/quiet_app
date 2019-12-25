@@ -48,7 +48,7 @@ div.jumbotron.jumbotron-extend
     <!-- 店舗部分 -->
     <div class="tab-pane fade " id="店舗" role="tabpanel" aria-labelledby="店舗-tab">
         -if @quiet.store?
-            img = image_tag @quiet.store.store_thumb.url
+            img = image_tag @quiet.store.thumb.url
         -else
             img = image_tag @quiet.store.url
     </div>
