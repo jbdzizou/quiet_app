@@ -7,9 +7,12 @@
                         div class="media"
                             -if user.image?
                                 img= image_tag user.image.thumb.url if user.image?
-                                div class="media-body pl-md-3"
-                                    p = user.name
-                                    p = user.email
-                                    -if user_signed_in?
-                                        -if user.id == current_user.id
-                                            = link_to 'プロフィール更新', edit_user_registration_path, class:'btn btn-primary mr-3'
+                            -else
+                                img = image_tag user.image.url
+
+                            div class="media-body pl-md-3"
+                                p = user.name
+                                p = user.email
+                                -if user_signed_in?
+                                    -if user.id == current_user.id
+                                        = link_to 'プロフィール更新', edit_user_registration_path, class:'btn btn-primary mr-3'
