@@ -8,7 +8,7 @@
                             -if user.image?
                                 img= image_tag user.image.thumb.url if user.image?
                             -else
-                                img = image_tag user.image.url
+                                img= image_tag user.image.url,:width => '100', :height => '100'
 
                             div class="media-body pl-md-3"
                                 p = user.name

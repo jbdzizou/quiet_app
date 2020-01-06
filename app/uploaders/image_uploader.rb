@@ -24,15 +24,15 @@ include CarrierWave::RMagick
     1..5.megabytes
   end
 
-# 画像の上限を300x200にする
-  process :resize_to_limit => [300, 200]
+# 画像の上限を100x100にする
+  process resize_to_fill: [100, 100, "Center"]
 
 #JPGで保存
   process :convert => 'jpg'
 
 #defaultの画像
   def default_url(*args)
-    "/images/" + [version_name, "default.png"].compact.join('_')
+    "/images/" + [version_name, "default_user.png"].compact.join('_')
   end
 
 #サムネイルの為に画像をリサイズ
