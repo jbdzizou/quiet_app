@@ -1,10 +1,6 @@
 class CommentsController < ApplicationController
-    before_action :find_quiet, only: [:new, :create, :edit, :update, :destroy]
+    before_action :find_quiet, only: [:create, :edit, :update, :destroy]
     before_action :find_comment, only: [:edit, :update, :destroy]
-
-    def new
-        @comment = Comment.new
-    end
 
     def create
         @comment = @quiet.comments.create(comment_params)
