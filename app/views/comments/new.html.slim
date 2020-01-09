@@ -1,13 +1,13 @@
-.col-md-12.col-md-offset-2.card-space
-.card
-    .card-header.text-center
-        h2 新たにコメントする
-p = render 'comments/form'
-/ = simple_form_for @comment, url: new_quiet_comment_path do |f|
-/     .form-group
-/         = f.input :content, input_html: { rows: 5 }, label: "コメント"
-/         = f.button :submit, :class => 'btn btn-success'
+/ .col-md-12.col-md-offset-2.card-space
+/ .card
+/     .card-header.text-center
+/         h2 新たにコメントする
+/ p = render 'comments/form'
+/ / = simple_form_for @comment, url: new_quiet_comment_path do |f|
+/ /     .form-group
+/ /         = f.input :content, input_html: { rows: 5 }, label: "コメント"
+/ /         = f.button :submit, :class => 'btn btn-success'
 
-    .btn-group
-        p = link_to "店舗ページへ戻る", quiet_path(@quiet)
+/     .btn-group
+/         p = link_to "店舗ページへ戻る", quiet_path(@quiet)
 

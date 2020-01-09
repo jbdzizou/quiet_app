@@ -1,8 +1,8 @@
 <!--吹き出しはじまり-->
 .balloon1
     .faceicon
-        img = image_tag comment.user.image.thumb50.url
-        .profile-font = comment.user.name
+        img = image_tag @quiet.user.image.thumb50.url
+        .profile-font = @quiet.user.name
         div class="links btn-group"
         -if user_signed_in?
             -if comment.user_id == current_user.id
