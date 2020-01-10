@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :users, only: [:index]
+  resources :comments, only: [:index]
 
   # ログイン、アカウント編集後、任意のページに推移させるための記述
   devise_for :users,controllers: {
