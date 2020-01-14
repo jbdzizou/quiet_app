@@ -1,9 +1,13 @@
 class CommentsController < ApplicationController
-    before_action :find_quiet, only: [:create, :edit, :update, :destroy]
+    before_action :find_quiet, only: [:show, :create, :edit, :update, :destroy]
     before_action :find_comment, only: [:edit, :update, :destroy]
+
+    def show
+    end
 
     def index
         @comments = Comment.all.order("created_at DESC")
+        @quiets = Quiet.all.order("created_at DESC")
     end
 
     def create

@@ -18,4 +18,5 @@
                     .col-md-2
                         .store_posi 
                             = image_tag comment.quiet.store.thumb2.url
-                        = comment.quiet.name
+                        -@quiets.each do |quiet|
+                            h5 = link_to quiet.name,quiet_path(quiet),{:style=>'color:black;'}

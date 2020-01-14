@@ -39,53 +39,14 @@
 <!-- おすすめポイントから探す -->
     div style="text-align:center;"
         h2.nyusen おすすめポイントから探す
+p = render 'quiets/recommend'
 
-<!-- ここから　おすすめから探す -->
-<div class="card-deck">
-    <div class="row">
-        - @quiets.each do |quiet|
-            <div class="col-md-6">
-                <div class="card mb-3 style=max-width: 540px;">
-                    <div class="row no-gutters">
-                        <div class="col-md-4">
-                            -if quiet.store?
-                                img.img-fluid = image_tag quiet.store.thumb.url                  
-                            -else
-                                img.img-fluid = image_tag quiet.store.url
-                        </div>                
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item list-body">
-                                        div class="media balloon2"
-                                            .faceicon
-                                                img= image_tag quiet.user.image.thumb50.url if quiet.user.image?
-                                            div class="media-body"
-                                                p.profile-font = quiet.user.name
-                                        p.description-font = quiet.recommend.truncate(50)
-                                        p style="text-align: right" = l quiet.updated_at
-                                    </li>
-                                    
-                                    <li class="list-group-item border border-0">
-                                        h5 = link_to quiet.name,quiet_path(quiet),{:style=>'color:black;'}
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </div>       
-</div>
-
-<!-- 新規店舗から探す -->
+<!-- ここから　新規店舗から探す -->
     div style="text-align:center;"
         h2.nyusen 新規登録店舗から探す
-
 p = render @quiets
 
-<!-- 新規店舗から探す -->
+<!-- ここから　コメントから探す -->
     div style="text-align:center;"
         h2.nyusen コメントから探す
-
 p = render 'comments/card'
