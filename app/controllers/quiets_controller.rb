@@ -4,6 +4,7 @@ class QuietsController < ApplicationController
 
   def index
     @quiets = Quiet.all.order("created_at DESC")
+    @comments = Comment.all.order("created_at DESC")
   end
 
   def show

@@ -36,9 +36,11 @@
                     p.card-msg time
                 .card-text.text-center.index-font 混雑時を避けて,空いてる時間帯を共有し、
                 .card-text.text-center.index-font ストレスフリーな時間に！！
+<!-- おすすめポイントから探す -->
     div style="text-align:center;"
-        h2 新規登録店舗から探す
+        h2.nyusen おすすめポイントから探す
 
+<!-- ここから　おすすめから探す -->
 <div class="card-deck">
     <div class="row">
         - @quiets.each do |quiet|
@@ -60,7 +62,7 @@
                                                 img= image_tag quiet.user.image.thumb50.url if quiet.user.image?
                                             div class="media-body"
                                                 p.profile-font = quiet.user.name
-                                        p.description-font = quiet.description.truncate(50)
+                                        p.description-font = quiet.recommend.truncate(50)
                                         p style="text-align: right" = l quiet.updated_at
                                     </li>
                                     
@@ -75,3 +77,15 @@
             </div>
     </div>       
 </div>
+
+<!-- 新規店舗から探す -->
+    div style="text-align:center;"
+        h2.nyusen 新規登録店舗から探す
+
+p = render @quiets
+
+<!-- 新規店舗から探す -->
+    div style="text-align:center;"
+        h2.nyusen コメントから探す
+
+p = render 'comments/card'

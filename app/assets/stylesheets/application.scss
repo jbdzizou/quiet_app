@@ -210,3 +210,22 @@
     height: auto;
     border-radius: 50%;
 }
+.under {
+    text-decoration: underline;
+}
+.nami {
+    border-bottom:dotted;/*下線を点線にする*/
+    border-color:#FF0000;
+    border-width:1px;
+}
+
+.seotext_03 {
+    border-bottom:double;/*二重線を引く*/
+    border-color:#FF0000;
+    border-width:3px;
+    }
+    .nyusen {
+    border-bottom:double;/*二重線を引く*/
+    border-color:#FF0000;
+    border-width:3px;
+    }
