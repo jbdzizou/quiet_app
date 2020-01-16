@@ -2,12 +2,12 @@ div.jumbotron.jumbotron-fluid
     div.container.fluid
         h2.display4 style="black" = @quiet.name 
         p.lead.description-font.text-lowercase = @quiet.description 
-        span.badge.badge-pill.badge-warning  お薦め度
-        h2.i.fas.fa-star style="color:red;" 
-        h2.i.fas.fa-star style="color:red;" 
-        h2.i.fas.fa-star style="color:red;" 
+        span.badge.badge-pill.badge-warning  ジャンル
+        h2.i class="fas fa-utensils" style="color:orange;" 
+            = @quiet.genre
         P { text-indent: 1em; }
-            h3.i.fas.fa-train = @quiet.road
+            h3.i.fas.fa-train style="color:red;" 
+                = @quiet.road
             .btn-group
             -if user_signed_in?
                 div.float-right= link_to 'お店更新', edit_quiet_path(@quiet), class:'btn btn-primary mr-3'
@@ -37,7 +37,6 @@ div.jumbotron.jumbotron-fluid
         -if user_signed_in?
             h3.reply-to-msg 新規コメントを書く
             p = render 'comments/form'
-            / div.float-right= link_to '口コミを書く', new_quiet_comment_path(@quiet), class:'btn btn-warning mr-3'
         <div class="row no-gutters">
             <div class="col-md-12">
                 <div class="card-body">
@@ -60,6 +59,14 @@ div.jumbotron.jumbotron-fluid
         .row
         h4 = "#{@quiet.name}のその他情報"
         .list-group.store-font
+            .list-group-item
+                .row.no-gutters
+                    .col-md-4.text-center.align-self-center
+                            i class="fas fa-utensils" style="color:orange;"
+                            h5 ジャンル
+                    .col-md-8
+                        .card-body
+                            h5 = @quiet.genre
             .list-group-item
                 .row.no-gutters
                     .col-md-4.text-center.align-self-center

@@ -26,6 +26,7 @@ class CommentsController < ApplicationController
 
     def update
         if @comment.update(comment_params)
+            flash[:success] = "Data updated"
             redirect_to quiet_path(@quiet)
         else
             render 'edit'

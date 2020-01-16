@@ -28,6 +28,7 @@ class QuietsController < ApplicationController
 
   def update
     if @quiet.update(quiet_params)
+      flash[:success] = "Data updated"
       redirect_to quiet_path
     else
       render 'edit'
@@ -42,7 +43,7 @@ class QuietsController < ApplicationController
   private
 
   def quiet_params
-    params.require(:quiet).permit(:name, :description, :store, :road, :recommend,:remove_store)
+    params.require(:quiet).permit(:name, :description, :store, :road, :recommend,:remove_store, :genre)
   end
 
   def find_quiet

@@ -4,6 +4,9 @@
         = f.input :name, label: "店名"
         = f.input :description, input_html: { rows: 5 }, label: "店舗紹介"
     .form-group
+        = f.input :genre,  label: "ジャンル" do
+            = f.select :genre,["カフェ","カレー","寿司","ラーメン", "うどん・そば", "肉", "魚", "その他" ], {},   class: 'form-control'
+    .form-group
         = f.input :recommend, input_html: { rows: 5 },  label: "おすすめポイント"
         = f.input :road, input_html: { rows: 2 }, label: "アクセス"
     .form-group
