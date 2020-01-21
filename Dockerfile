@@ -8,6 +8,7 @@ COPY Gemfile /app/Gemfile
 COPY Gemfile.lock /app/Gemfile.lock
 RUN gem install bundler --no-document
 RUN bundle config build.nokogiri --use-system-libraries
+RUN bundle config --local build.sassc --disable-march-tune-native
 RUN bundle install
 RUN apt-get clean
 COPY . /app
