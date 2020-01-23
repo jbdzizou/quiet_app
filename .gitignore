@@ -28,3 +28,6 @@
 
 # heroku error log
 error_0121.rb
+
+# 環境変数設定
+/.env
