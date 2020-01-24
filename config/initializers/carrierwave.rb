@@ -6,7 +6,7 @@ if Rails.env.production?
     CarrierWave.configure do |config|
         config.storage :fog
         config.fog_provider = 'fog/aws'
-        config.fog_directory  = '' # 作成したS3バケット名入力（例 s3-rails-image-uploader）
+        config.fog_directory  = 'rails-quiet-photo'
         config.fog_credentials = {
         provider: 'AWS',
         aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
