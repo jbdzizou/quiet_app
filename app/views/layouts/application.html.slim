@@ -40,7 +40,7 @@ html
                                 i.far.fa-smile-beam.mrg-3 style="color:yellow;"
                                 font color="yellow" = current_user.name
                             div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"
-                                p class="dropdown-item" = link_to "ログアウト", destroy_user_session_path, method: :delete, :style=>"text-decoration: none;" ,:style=>"color:blue;" 
+                                p class="dropdown-item" = link_to "ログアウト", destroy_user_session_path, method: :delete, :style=>"color:blue;" 
                 - else
                     ul.navbar-nav.nav.mr-auto
                     ul.navbar-nav.pl-md-3

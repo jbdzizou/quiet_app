@@ -12,7 +12,7 @@
         <%= image_tag @user.image.thumb.url if @user.image? %>
         <%= f.file_field :image, id: :user_img, class: "form-control" %>
 
-        <script type="text/javascript">
+        <%# <script type="text/javascript">
           $(( document ).on('turbolinks:load', function() {
             function readURL(input) {
                 if (input.files && input.files[0]) {
@@ -27,7 +27,7 @@
                 readURL(this);
             });
           });
-          </script>
+          </script> %>
 
         <p><%= f.check_box :remove_image %>画像を削除する</p>
       </div>
