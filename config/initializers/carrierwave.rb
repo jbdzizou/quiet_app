@@ -8,7 +8,6 @@ CarrierWave.configure do |config|
         config.storage :fog
         config.fog_provider = 'fog/aws'
         config.fog_directory  = 'rails-quiet-photo'
-        config.asset_host = 'https://rails-quiet-photo.s3.amazonaws.com'
         config.fog_credentials = {
         provider: 'AWS',
         aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
