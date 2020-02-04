@@ -28,3 +28,6 @@
 
 # 環境変数設定
 /.env
+
+# Ignore uploaded test images.
+/public/uploads
