@@ -19,7 +19,7 @@ RUN apt-get install -y yarn
 RUN gem install bundler --no-document
 RUN bundle config build.nokogiri --use-system-libraries
 RUN bundle config --local build.sassc --disable-march-tune-native
-RUN bundle config set without 'development test'
+# RUN bundle config set without 'development test'
 
 # bundle install
 RUN bundle install
