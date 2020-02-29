@@ -13,11 +13,10 @@ gem 'mysql2', '>= 0.4.4', '< 0.6.0', groups: %w(test development), require: fals
 group :production do
   gem 'pg', '0.20.0'
   gem 'rails_12factor'
-  gem 'puma', ">= 3.12.2"
 end
 
 # Use Puma as the app server
-# gem "puma", ">= 3.12.2"
+gem "puma", ">= 4.3.2"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
