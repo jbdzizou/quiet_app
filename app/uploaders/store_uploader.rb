@@ -39,7 +39,7 @@ include CarrierWave::RMagick
 
 #サムネイルの為に画像をリサイズ
 version :thumb do 
-  process resize_fill: [180, 180, "Center"] 
+  process resize_to_fit: [180, 180] 
 end 
 version :thumb2 do 
   process resize_to_fit: [100, 100] 
