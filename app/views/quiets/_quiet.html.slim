@@ -1,7 +1,7 @@
 .card-deck
     .row
         - @quiets.each do |quiet|
-            .col-md-3
+            .col-sm-4
                 .card
                     -if quiet.store?
                         img.img-fluid = image_tag quiet.store.thumb.url               

@@ -1,19 +1,17 @@
-<div class="card-deck">
-    <div class="row">
+.card-deck
+    .row
         - @quiets.each do |quiet|
-            <div class="col-md-6">
-                <div class="card mb-3 style=max-width: 540px;">
-                    <div class="row no-gutters">
-                        <div class="col-md-4">
+                .card.mb-3 style="max-width: 540px;"
+                    .row.no-gutters
+                        .col-md-4
                             -if quiet.store?
                                 img.img-fluid = image_tag quiet.store.thumb.url                  
                             -else
-                                img.img-fluid = image_tag quiet.store.url
-                        </div>                
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item list-body">
+                                img.img-fluid = image_tag quiet.store.url                
+                        .col-md-8
+                            .card-body
+                                ul.list-group.list-group-flush
+                                    li.list-group-item.list-body
                                         div class="media balloon2"
                                             .faceicon
                                                 img= image_tag quiet.user.image.thumb50.url if quiet.user.image?
@@ -21,16 +19,6 @@
                                                 p.profile-font = quiet.user.name
                                         p.description-font = quiet.recommend.truncate(50)
                                         p style="text-align: right" = l quiet.updated_at
-                                    </li>
                                     
-                                    <li class="list-group-item border border-0">
+                                    li.list-group-item.border.border-0
                                         h5 = link_to quiet.name,quiet_path(quiet),{:style=>'color:black;'}
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </div>       
-</div>
