@@ -1,6 +1,7 @@
 class QuietsController < ApplicationController
   /before_action :authenticate_user!, only: [:show, :new]/
   before_action :find_quiet, only: [:show, :edit, :update, :destroy]
+  before_action :find_comment, only: [:show]
 
   def index
     @quiets = Quiet.all.order("created_at DESC")
@@ -49,5 +50,10 @@ class QuietsController < ApplicationController
   def find_quiet
     @quiet = Quiet.find(params[:id])
   end
+
+  def find_comment
+    @comment = @quiet.comments.find(params[:id])
+end
+
 
 end

@@ -3,17 +3,17 @@
         .row
             -@comments.each do |comment|
                 .col-md-10
-                    .card-body
-                            .balloon1
-                                .faceicon
-                                    img = image_tag comment.user.image.thumb50.url
-                                    p.profile-font = comment.quiet.user.name
-                                .chatting
-                                    .says
-                                        comment-content=comment.content
-                                        p style="text-align: right" = l comment.updated_at
+                        .card-body
+                                .balloon1
+                                    .faceicon
+                                        img = image_tag comment.user.image.thumb50.url
+                                        p.profile-font = comment.user.name
+                                    .chatting
+                                        .says
+                                            comment-content=comment.content
+                                            p style="text-align: right" = l comment.updated_at
                 .col-md-2
-                    .store_posi 
-                        = image_tag comment.quiet.store.thumb2.url
-                    -@quiets.each do |quiet|
-                        h5 = link_to quiet.name,quiet_path(quiet),{:style=>'color:black;'}
+                        .store_posi 
+                            = image_tag comment.quiet.store.thumb2.url
+                            h5 = link_to comment.quiet.name,quiet_path(comment.quiet),{:style=>'color:black;'}
+

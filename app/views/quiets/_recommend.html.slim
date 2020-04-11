@@ -1,24 +1,25 @@
 .card-deck
-    .row
-        - @quiets.each do |quiet|
-                .card.mb-3 style="max-width: 540px;"
-                    .row.no-gutters
-                        .col-md-4
-                            -if quiet.store?
-                                img.img-fluid = image_tag quiet.store.thumb.url                  
-                            -else
-                                img.img-fluid = image_tag quiet.store.url                
-                        .col-md-8
-                            .card-body
-                                ul.list-group.list-group-flush
-                                    li.list-group-item.list-body
-                                        div class="media balloon2"
-                                            .faceicon
-                                                img= image_tag quiet.user.image.thumb50.url if quiet.user.image?
-                                            div class="media-body"
-                                                p.profile-font = quiet.user.name
-                                        p.description-font = quiet.recommend.truncate(50)
-                                        p style="text-align: right" = l quiet.updated_at
-                                    
-                                    li.list-group-item.border.border-0
-                                        h5 = link_to quiet.name,quiet_path(quiet),{:style=>'color:black;'}
+    .container
+        .row
+            - @quiets.each do |quiet|
+                    .card.mb-3 style="max-width: 540px;"
+                        .row.no-gutters
+                            .col-sm-4
+                                -if quiet.store?
+                                    img.img-fluid = image_tag quiet.store.thumb.url                  
+                                -else
+                                    img.img-fluid = image_tag quiet.store.url                
+                            .col-sm-8
+                                .card-body
+                                    ul.list-group.list-group-flush
+                                        li.list-group-item.list-body
+                                            div class="media balloon2"
+                                                .faceicon
+                                                    img= image_tag quiet.user.image.thumb50.url if quiet.user.image?
+                                                div class="media-body"
+                                                    p.profile-font = quiet.user.name
+                                            p.description-font = quiet.recommend.truncate(50)
+                                            p style="text-align: right" = l quiet.updated_at
+                                        
+                                        li.list-group-item.border.border-0
+                                            h5 = link_to quiet.name,quiet_path(quiet),{:style=>'color:black;'}

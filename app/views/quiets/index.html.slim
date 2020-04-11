@@ -39,15 +39,16 @@
                     p.card-msg time
                 .card-text.text-center.index-font 混雑時を避けて,空いてる時間帯を共有し、
                 .card-text.text-center.index-font ストレスフリーな時間に！！
-<!-- おすすめポイントから探す -->
+<!-- 店鋪から探す -->
     div style="text-align:center;"
-        h2.nyusen おすすめポイントから探す
+        h2.nyusen 店鋪から探す
 p = render 'quiets/recommend'
 
-<!-- ここから　新規店舗から探す -->
-    div style="text-align:center;"
-        h2.nyusen 新規登録店舗から探す
-p = render @quiets
+
+/ <!-- ここから　新規店舗から探す -->
+/     div style="text-align:center;"
+/         h2.nyusen 新規登録店舗から探す
+/ p = render @quiets
 
 <!-- ここから　コメントから探す -->
     div style="text-align:center;"

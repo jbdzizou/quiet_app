@@ -1,19 +1,22 @@
 <!--吹き出しはじまり-->
 .card.mb-3
-    .balloon1
-        .faceicon
-            img = image_tag @quiet.user.image.thumb50.url
-            .profile-font = @quiet.user.name
-            div class="links btn-group"
-            -if user_signed_in?
-                -if comment.user_id == current_user.id
-                    = link_to '更新', edit_quiet_comment_path(comment.quiet, comment), class:'btn btn-info'
-                -elsif current_user.admin?
-                    = link_to '削除', quiet_path(@quiet), method: :delete,
-                    data: { confirm: "削除します。本当によろしいですか？" }, class:'btn btn-danger'
-        .chatting
-            .says
-                comment-content=comment.content
-                p style="text-align: right" = l @quiet.updated_at
+    .container
+        .row
+            .col-md-12
+                .card-body
+                    .balloon1
+                        .faceicon
+                            img = image_tag @comment.user.image.thumb50.url
+                            p.profile-font = @comment.user.name
+                            div class="links btn-group"
+                            -if user_signed_in?
+                                -if comment.user_id == current_user.id
+                                    = link_to '更新', edit_quiet_comment_path(comment.quiet, comment), class:'btn btn-info'
+                                -elsif current_user.admin?
+                                    = link_to '削除', quiet_path(@quiet), method: :delete,
+                                    data: { confirm: "削除します。本当によろしいですか？" }, class:'btn btn-danger'
+                        .chatting
+                            .says
+                                comment-content=comment.content
+                                p style="text-align: right" = l @quiet.updated_at
 <!--吹き出し終わり-->
-
