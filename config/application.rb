@@ -20,5 +20,7 @@ module App
     # the framework and any gems in your application.
     Rails.application.config.assets.precompile += %w( *.js *application.css)
     config.generators.javascript_engine = :js
+
+    config.action_controller.default_protect_from_forgery = false
   end
 end
